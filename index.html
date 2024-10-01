@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Integradora 1. Agregación de eventos de forma dinámica</title>
+</head>
+<body>
+    <h1>Integradora 1. Agregación de eventos de forma dinámica</h1>
+<hr>
+<div id="info" ></div>
+<h3>Nombre</h3>
+<!--formulario-->
+<form id="formulario" name="formulario" action="validar.php" onsubmit="return validarFormulario();" method="POST" >
+    <!--cajas texto-->
+    <label for="nombre">Primer nombre</label><br>
+    <input type="text" name="nombre"><br>
+    <label for="apellidos">Apellidos</label><br>
+    <input type="text" name="apellido"><br>
+    <br>
+    <h3>Genero</h3>
+    <!--selector de opciones-->
+    <select name="genero">
+        <option value="0">--</option>
+        <option value="1">Hombre</option>
+        <option value="2">Mujer</option>
+        <option value="3">Otro</option> 
+    </select>
+    <br>
+    <br>
+    <h3>Selecciona tu pais</h3>
+    <!--checkbox-->
+    <label for="pais">Mexico</label>
+    <input type="checkbox" name ="pais" value="Mexico">
+    <label for="pais">Estados Unidos</label>
+    <input type="checkbox" name ="pais" value="Estados Unidos" >
+    <label for="pais">Canada</label>
+    <input type="checkbox" name ="pais" value="Canada">
+    <label for="pais">Colombia</label>
+    <input type="checkbox" name ="pais" value="Colombia">
+    <label for="pais">Brasil</label>
+    <input type="checkbox" name ="pais" value="Brasil">
+    <br>
+    <br>
+    <h3>Añade tus comentarios</h3>
+    <!--text area-->
+    <textarea name="comentarios" id="comentarios" cols="30" rows="10"></textarea>
+    <br>
+    <br>
+    <!--boton de envio-->
+   <button id="boton-enviar" type="submit">Enviar</button>
+</form>
+<br>
+<h1>Lista de usuarios</h1>
+<table id="usuarios">
+    <caption>Registro de usuarios</caption>
+    <div class="botones" >
+        <!--boton de eliminar-->
+        <button id="boton-eliminar" onclick="eliminarTodo()">Eliminar usuarios</button>
+    </div>
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Genero</td>
+            <td>Pais</td>
+            <td>Comentarios</td>
+        </tr>
+    </thead>
+
+    <tbody id="registroUsuarios"></tbody>
+</table>
+
+<!--script-->
+<script src="script.js"></script>
+</body>
+</html>
